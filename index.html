@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Húlu果 · Húlu Gourd 支持 Support</title>
 <style>
-:root{--paper:#F0E9DC;--card:#F8F4EC;--ink:#2E2822;--soft:#6B6158;--accent:#96785C;--rule:#DDD3C3}
-@media (prefers-color-scheme:dark){:root{--paper:#1E1B18;--card:#27231F;--ink:#ECE5DA;--soft:#B3A898;--accent:#C2A483;--rule:#3A342E}}
+:root{--paper:#F0E9DC;--card:#F8F4EC;--ink:#2E2822;--soft:#6B6158;--accent:#96785C;--on-accent:#FFFFFF;--rule:#DDD3C3}
+@media (prefers-color-scheme:dark){:root{--paper:#1E1B18;--card:#27231F;--ink:#ECE5DA;--soft:#B3A898;--accent:#C2A483;--on-accent:#1E1B18;--rule:#3A342E}}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Helvetica Neue",Arial,sans-serif}
@@ -25,16 +25,28 @@ ul{padding-left:1.2em}
 li{margin:0 0 6px}
 .date{color:var(--soft);font-size:14px}
 footer{color:var(--soft);font-size:14px;text-align:center;margin-top:32px}
+.tabs{display:inline-flex;margin:18px 0 0;padding:3px;border:1px solid var(--rule);border-radius:999px;background:var(--card)}
+.tabs a{padding:6px 18px;border-radius:999px;text-decoration:none;color:var(--soft);font-size:15px}
+.tabs .tab-zh,main:has(#en:target) .tabs .tab-en{background:var(--accent);color:var(--on-accent);font-weight:600}
+main:has(#en:target) .tabs .tab-zh{background:none;color:var(--soft);font-weight:400}
+.more{margin:0 0 20px;font-size:15px}
+@supports selector(main:has(a)){
+.lang-en{display:none}
+main:has(#en:target) .lang-en{display:block}
+main:has(#en:target) .lang-zh{display:none}
+}
 </style>
 </head>
 <body>
 <main>
+<span id="zh"></span><span id="en"></span>
 <header>
 <h1>Húlu果<br>Húlu Gourd</h1>
-<p class="sub">文玩葫芦的收藏与把玩。A quiet app for collecting and caring for ornamental gourds.</p>
-<nav><a href="#zh">中文</a><a href="#en">English</a><a href="privacy.html">隐私政策 Privacy Policy</a></nav>
+<nav class="tabs"><a class="tab-zh" href="#zh">中文</a><a class="tab-en" href="#en">English</a></nav>
 </header>
-<section id="zh" lang="zh-Hans">
+<div class="lang-zh" lang="zh-Hans">
+<p class="more">文玩葫芦的收藏与把玩。<a href="privacy.html#zh">隐私政策</a></p>
+<section>
 <h2>联系与支持</h2>
 <p>有问题或建议，请发邮件到 <a href="mailto:hulugourd.app@gmail.com">hulugourd.app@gmail.com</a>，开发者会在 15 个工作日内答复。也可以在应用里点「设置 › 联系开发者」写信。</p>
 <h3>换手机或重装后，藏品还在吗？</h3>
@@ -46,7 +58,10 @@ footer{color:var(--soft);font-size:14px;text-align:center;margin-top:32px}
 <h3>怎样删除我的数据？</h3>
 <p>删除应用即删除本机数据；iCloud 里的数据按<a href="privacy.html#zh">隐私政策</a>「你的权利」一节删除。应用没有账号，开发者也收不到你的藏馆。</p>
 </section>
-<section id="en" lang="en">
+</div>
+<div class="lang-en" lang="en">
+<p class="more">A quiet app for collecting and caring for ornamental gourds. <a href="privacy.html#en">Privacy Policy</a></p>
+<section>
 <h2>Contact and support</h2>
 <p>For questions or suggestions, email <a href="mailto:hulugourd.app@gmail.com">hulugourd.app@gmail.com</a>. The developer replies within 15 working days. You can also write from the app: Settings › Contact the Developer.</p>
 <h3>Will my collection survive a new phone or a reinstall?</h3>
@@ -58,7 +73,9 @@ footer{color:var(--soft);font-size:14px;text-align:center;margin-top:32px}
 <h3>How do I delete my data?</h3>
 <p>Deleting the app deletes the data on your phone. To delete the iCloud data, follow "Your rights" in the <a href="privacy.html#en">privacy policy</a>. There is no account, and the developer never receives your collection.</p>
 </section>
+</div>
 <footer>© 2026 Zhou Entong · Húlu Gourd</footer>
 </main>
+<script>if(!location.hash&&!/^zh/i.test(navigator.language||""))location.replace("#en")</script>
 </body>
 </html>

@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Húlu果 隐私政策 · Húlu Gourd Privacy Policy</title>
 <style>
-:root{--paper:#F0E9DC;--card:#F8F4EC;--ink:#2E2822;--soft:#6B6158;--accent:#96785C;--rule:#DDD3C3}
-@media (prefers-color-scheme:dark){:root{--paper:#1E1B18;--card:#27231F;--ink:#ECE5DA;--soft:#B3A898;--accent:#C2A483;--rule:#3A342E}}
+:root{--paper:#F0E9DC;--card:#F8F4EC;--ink:#2E2822;--soft:#6B6158;--accent:#96785C;--on-accent:#FFFFFF;--rule:#DDD3C3}
+@media (prefers-color-scheme:dark){:root{--paper:#1E1B18;--card:#27231F;--ink:#ECE5DA;--soft:#B3A898;--accent:#C2A483;--on-accent:#1E1B18;--rule:#3A342E}}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Helvetica Neue",Arial,sans-serif}
@@ -25,25 +25,30 @@ ul{padding-left:1.2em}
 li{margin:0 0 6px}
 .date{color:var(--soft);font-size:14px}
 footer{color:var(--soft);font-size:14px;text-align:center;margin-top:32px}
+.tabs{display:inline-flex;margin:18px 0 0;padding:3px;border:1px solid var(--rule);border-radius:999px;background:var(--card)}
+.tabs a{padding:6px 18px;border-radius:999px;text-decoration:none;color:var(--soft);font-size:15px}
+.tabs .tab-zh,main:has(#en:target) .tabs .tab-en{background:var(--accent);color:var(--on-accent);font-weight:600}
+main:has(#en:target) .tabs .tab-zh{background:none;color:var(--soft);font-weight:400}
+.more{margin:0 0 20px;font-size:15px}
+@supports selector(main:has(a)){
+.lang-en{display:none}
+main:has(#en:target) .lang-en{display:block}
+main:has(#en:target) .lang-zh{display:none}
+}
 </style>
 </head>
 <body>
 <main>
+<span id="zh"></span><span id="en"></span>
 <header>
 <h1>Húlu果 隐私政策<br>Húlu Gourd Privacy Policy</h1>
-<p class="sub">与应用内「设置 › 关于 › 隐私政策」为同一份。The same text as Settings › About › Privacy Policy in the app.</p>
-<nav><a href="#zh">中文</a><a href="#en">English</a><a href="./">支持 Support</a></nav>
+<nav class="tabs"><a class="tab-zh" href="#zh">中文</a><a class="tab-en" href="#en">English</a></nav>
 </header>
-<section id="zh" lang="zh-Hans">
-<h2>中文</h2>
+<div class="lang-zh" lang="zh-Hans">
+<p class="more">与应用内「设置 › 关于 › 隐私政策」为同一份。<a href="./#zh">支持与常见问题</a></p>
+<section>
 <p class="date">更新日期：2026 年 10 月 9 日</p>
 <p>Húlu果是一款文玩葫芦收藏与把玩应用。它没有自己的服务器，不需要注册账号，不自动收集个人信息。你的藏品只保存在这部设备上，以及（开启 iCloud 时）你自己的 iCloud 里；开发者读不到你的藏馆。</p>
-<h2>个人信息处理者与联系方式</h2>
-<ul>
-<li>个人信息处理者：Zhou Entong（个人开发者）</li>
-<li>所在地：新加坡</li>
-<li>联系邮箱：<a href="mailto:hulugourd.app@gmail.com">hulugourd.app@gmail.com</a></li>
-</ul>
 <h2>保存什么，保存在哪里</h2>
 <p><strong>藏品存档</strong>：保存在这部设备的应用沙盒里，包括你的葫芦、盘玩与养护进度、展架与避光柜、叶余额与叶明细、集市的周次与额度，以及用来核对时间的记录。更换或恢复存档时，旧档的副本同样只留在本机。</p>
 <p><strong>iCloud 同步</strong>：设备登录 iCloud 并允许 Húlu果使用 iCloud 时，压缩后的藏馆存档会自动同步到你自己的 iCloud 私有数据库。云端保存最新一份，以及最近 7 个使用日的每日安全副本：只在最新一份读不出时由应用自动取用并提示一次，应用内不列出、也不提供往回恢复。开发者读不到你的私有云档。</p>
@@ -93,17 +98,19 @@ footer{color:var(--soft);font-size:14px;text-align:center;margin-top:32px}
 <h2>政策变更</h2>
 <p>如果以后的版本改变了数据处理方式，本政策会随应用更新一起修订，并更新顶部的日期。「没有服务器、没有账号、不收集个人信息」是这款应用的底线。</p>
 <p>本政策有中文与英文两种文本，如有出入，以中文为准。</p>
+<h2>个人信息处理者与联系方式</h2>
+<ul>
+<li>个人信息处理者：Zhou Entong（个人开发者）</li>
+<li>所在地：新加坡</li>
+<li>联系邮箱：<a href="mailto:hulugourd.app@gmail.com">hulugourd.app@gmail.com</a></li>
+</ul>
 </section>
-<section id="en" lang="en">
-<h2>English</h2>
+</div>
+<div class="lang-en" lang="en">
+<p class="more">The same text as Settings › About › Privacy Policy in the app. <a href="./#en">Support and FAQ</a></p>
+<section>
 <p class="date">Last updated: 9 October 2026</p>
 <p>Húlu Gourd is a lifestyle app for collecting and caring for ornamental gourds. It has no server of its own, needs no account and does not automatically collect personal information. Your collection is stored only on this device and, if you turn on iCloud, in your own iCloud. The developer cannot see your collection.</p>
-<h2>Who handles your information</h2>
-<ul>
-<li>Personal information handler: Zhou Entong (individual developer)</li>
-<li>Location: Singapore</li>
-<li>Contact email: <a href="mailto:hulugourd.app@gmail.com">hulugourd.app@gmail.com</a></li>
-</ul>
 <h2>What is stored, and where</h2>
 <p><strong>Collection archive</strong>: stored in the app's sandbox on this device. It holds your gourds, handling and care progress, shelves and shade cabinet, leaf balance and leaf history, the market week and allowances, and the records used to check the time. When an archive is replaced or recovered, a copy of the previous one stays on this device only.</p>
 <p><strong>iCloud sync</strong>: when the device is signed in to iCloud and Húlu Gourd is allowed to use it, the compressed collection archive syncs automatically to your own private iCloud database. iCloud keeps the latest copy and a daily safety copy for each of the last 7 days you used the app. The app uses a safety copy on its own, with a one-time notice, only if the latest copy cannot be read; it does not list them or offer to roll back to one. The developer cannot read your private iCloud data.</p>
@@ -153,8 +160,16 @@ footer{color:var(--soft);font-size:14px;text-align:center;margin-top:32px}
 <h2>Changes to this policy</h2>
 <p>If a future version changes how data is handled, this policy will be revised together with that update and the date at the top will change. "No server, no account, no collection of personal information" is the baseline of this app.</p>
 <p>This policy is available in Chinese and English. If the two differ, the Chinese text prevails.</p>
+<h2>Who handles your information</h2>
+<ul>
+<li>Personal information handler: Zhou Entong (individual developer)</li>
+<li>Location: Singapore</li>
+<li>Contact email: <a href="mailto:hulugourd.app@gmail.com">hulugourd.app@gmail.com</a></li>
+</ul>
 </section>
+</div>
 <footer>© 2026 Zhou Entong · Húlu Gourd</footer>
 </main>
+<script>if(!location.hash&&!/^zh/i.test(navigator.language||""))location.replace("#en")</script>
 </body>
 </html>
